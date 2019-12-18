@@ -4,20 +4,19 @@
 
 <div class="jumbotron">
    <div class="card border-info mb-3" style="max-width: 75rem;">
-      <div class="card-header">Result of Stocks</div>
+      <div class="card-header">View your stock prices</div>
       <div class="card-body">
-         <h4 class="card-title">View your stock prices</h4>
+         <h2>Search results for "{{ stock_name }}" </h2>
+         <h3>At interval "{{ interval_time }}"
+
          <p class="card-text"> 
          <div class="container">
             <div class="row">
                <div class="col">
-                  <h4>Stock</h4>
                </div>
             </div>
             <div class="row">
                <div class="col">
-
-               <h2>Search results for "{{ Symbol }}"</h2>
 
                {% for Stocks in stock_data%}
 

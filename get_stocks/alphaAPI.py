@@ -15,7 +15,7 @@ def alpha_api_call(Symbol, Interval):
 
     api_key = '0B7Z2RG55NXJOCF3'
 
-    ts = TimeSeries(key=api_key, output_format='json')
+    ts = TimeSeries(key=api_key, output_format='pandas')
 
     stock_symbol = Symbol
     stock_interval = Interval
@@ -24,9 +24,21 @@ def alpha_api_call(Symbol, Interval):
     print(stock_interval)
 
     try: 
-        data, meta_data = ts.get_intraday(symbol=stock_symbol,interval=stock_interval, outputsize='full')
+        data, meta_data = ts.get_intraday(symbol=stock_symbol,interval=stock_interval, outputsize='compact')
 
-        return data 
+        ts_data = data
+        print(ts_data)
+
+        return ts_data
+
+        # ts_data = pd.DataFrame(ts_data['Time Series (30min)'], orient= 'index').sort_index(axis=1)
+        # ts_data = ts_data.rename(columns={ '1. open': 'Open', '2. high': 'High', '3. low': 'Low', '4. close': 'Close', '5. volume': 'Volume'})
+        # ts_data = ts_data[[ 'Open', 'High', 'Low', 'Close', 'Volume']]
+
+        # print(ts_data)
+        # return ts_data
+
+
         #pprint(data.head(10))
 
         #json_dic = data.to_json()

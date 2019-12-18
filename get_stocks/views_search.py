@@ -16,7 +16,6 @@ def view_search_stock(request):
 #
 def display_stock_data_(request):
 
-
     if request.method == 'POST':
         form = NewSearch(request.POST)
 
