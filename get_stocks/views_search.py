@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, HttpResponseRedirect
+from django.shortcuts import render, redirect, HttpResponseRedirect, HttpResponse
 from django.contrib import messages
 from .models import FindStock
 from .alphaAPI import alpha_api_call
@@ -33,9 +33,10 @@ def display_stock_data_(request):
 
             if stock_name is not None:
 
-                args = {'stock_name':stock_name, 'interval_time':interval_time, 'stock_data':stock_data } 
+                args = {'stock_name':stock_name, 'interval_time':interval_time, 'stock_data_html':stock_data.to_html() } 
                 return render (request, 'get_stocks/savedstocks/savedstocks.html', args)
-            
+                # return HttpResponse(stock_data.to_html())
+
             else:
                 messages.add_message(request, messages.ERROR, 'Sorry, could not connnect to Alpha API.')
 
