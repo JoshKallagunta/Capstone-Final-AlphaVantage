@@ -10,6 +10,6 @@ urlpatterns = [
 
     path('searchstocks/', views_search.view_search_stock, name='view_search_stock'),
 
-    path('saved/', views_saved.view_saved_stock, name='view_stock'),
+    path('saved/', views_search.display_stock_data_, name='view_stock'),
     
 ]

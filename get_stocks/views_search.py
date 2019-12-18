@@ -16,21 +16,21 @@ def view_search_stock(request):
 #
 def display_stock_data_(request):
 
-    print('joshua')
-    print('interval_time')
 
     if request.method == 'POST':
         form = NewSearch(request.POST)
 
         if form.is_valid():
 
-            stock_name = form.cleaned_data.get['Symbol']
-            interval_time = form.cleaned_data.get['Interval']
+            stock_name = form.cleaned_data.get('Symbol')
+            interval_time = form.cleaned_data.get('Interval')
+        
 
             #stock_name, interval_time = alpha_api_call()
 
             stock_data = alpha_api_call(stock_name, interval_time)
 
+            print(stock_data)
 
             if stock_name is not None:
 

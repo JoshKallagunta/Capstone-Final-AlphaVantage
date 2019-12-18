@@ -15,7 +15,7 @@ def alpha_api_call(Symbol, Interval):
 
     api_key = '0B7Z2RG55NXJOCF3'
 
-    ts = TimeSeries(key=api_key, output_format='pandas')
+    ts = TimeSeries(key=api_key, output_format='json')
 
     stock_symbol = Symbol
     stock_interval = Interval
@@ -26,16 +26,17 @@ def alpha_api_call(Symbol, Interval):
     try: 
         data, meta_data = ts.get_intraday(symbol=stock_symbol,interval=stock_interval, outputsize='full')
 
+        return data 
         #pprint(data.head(10))
 
-        json_dic = data.to_json()
+        #json_dic = data.to_json()
 
-        print(json_dic)
+        #print(json_dic)
 
-        return json_dic
+        #return json_dic
 
-    except:
-        pass
+    except Exception as e:
+        print(e)
         #log.e('Error getting data from Alpha API', exc_info=e)
 
 
