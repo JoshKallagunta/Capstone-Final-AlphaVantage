@@ -1,0 +1,53 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+   <head>
+      <title>Stock Analysis Tracker</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href='{% static 'css/bootstrap.css' %}'></link>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+   </head>
+   <style>
+      body {background-color: #404040;}
+   </style>
+   <body>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+         <a class="navbar-brand" href="/">Home</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+               <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'get_stocks:view_search_stock' %}">Find Stocks <span class="sr-only">(current)</span></a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="{% url 'get_stocks:view_stock' %}">View Saved Saved</a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+      <hr>
+      <div class="block-content">
+         {% block content %}
+
+
+         <div> 
+         <img src="static/temp/nyse.jpg" class="img=fluid" width="100%" alt="NYSE Logo">
+         </div>
+         <div class="jumbotron">
+            <h1 class="display-3">Welcome to the Stock Tracker</h1>
+            <p class="lead">This application is used to track interday stock prices in intervals of 5,15,30, and 60 minutes. This will display in a table for easy viewing.</p>
+            <hr class="my-4">
+            <p>It uses the AlphaVantage API to get interday data. Future enhancements will include Simple Moving Average (SMA) and Relative Strength Index (RSI) tracking as well. Possibly the ability to graph the data. </p>
+            <p class="lead">
+               <a class="btn btn-primary btn-reg" href="/searchstocks" role="button">Track Stocks</a>
+            </p>
+         </div>
+         {% endblock %}
+      </div>
+   </body>
+</html>
+
+
