@@ -23,42 +23,5 @@
    </div>
 </div>
 
-
-
-
-
-
-
-
-<div class="jumbotron">
-   <div class="card border-info mb-3" style="max-width: 75rem;">
-      <div class="card-header">Result of Stocks</div>
-      <div class="card-body">
-         <h4 class="card-title">View your stock prices</h4>
-         <p class="card-text"> 
-         <div class="container">
-            <div class="row">
-               <div class="col">
-                  <h4>Stock</h4>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col">
-
-               {% for Stocks in stock_data%}
-
-                  <h5> {{ Stocks }} </h5>
-
-                  {% endfor %}
-               </div>
-            </div>
-         </div>
-         </p>
-      </div>
-   </div>
-</div>
-
-
-
 </form>
 {% endblock %}

@@ -35,7 +35,7 @@ def display_stock_data_(request):
 
                 args = {'stock_name':stock_name, 'interval_time':interval_time, 'stock_data_html':stock_data.to_html() } 
                 return render (request, 'get_stocks/savedstocks/savedstocks.html', args)
-                # return HttpResponse(stock_data.to_html())
+                #return HttpResponse(stock_data.to_html())
 
             else:
                 messages.add_message(request, messages.ERROR, 'Sorry, could not connnect to Alpha API.')
