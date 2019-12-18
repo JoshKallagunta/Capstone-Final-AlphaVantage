@@ -1,7 +1,7 @@
 {% extends 'get_stocks/home.html' %}
 {% block content %}
 
-<form action="" method="POST">
+<form action="{% url 'get_stocks:view_stock' %}" method="POST">
 
 <div class="jumbotron">
       <div> 

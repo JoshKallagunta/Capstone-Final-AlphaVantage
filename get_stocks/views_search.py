@@ -35,7 +35,7 @@ def display_stock_data_(request):
             if stock_name is not None:
 
                 args = {'stock_name':stock_name, 'interval_time':interval_time, 'stock_data':stock_data } 
-                return render (request, 'get_stocks/searchStocks/searchstocks.html', args)
+                return render (request, 'get_stocks/savedstocks/savedstocks.html', args)
             
             else:
                 messages.add_message(request, messages.ERROR, 'Sorry, could not connnect to Alpha API.')

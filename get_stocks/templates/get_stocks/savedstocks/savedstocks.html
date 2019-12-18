@@ -1,9 +1,6 @@
 {% extends 'get_stocks/home.html' %}
 {% block content %}
 
-<h1>
-This is were you view a saved stock
-</h1>
 
 <div class="jumbotron">
    <div class="card border-info mb-3" style="max-width: 75rem;">
@@ -19,6 +16,8 @@ This is were you view a saved stock
             </div>
             <div class="row">
                <div class="col">
+
+               <h2>Search results for "{{ Symbol }}"</h2>
 
                {% for Stocks in stock_data%}
 
