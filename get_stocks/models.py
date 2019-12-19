@@ -12,8 +12,17 @@ class Stock(models.Model):
         
 class FindStock(models.Model):
 
+    INTERVAL_CHOICES = (
+        ('5min', '5MIN'),
+        ('15min', '15MIN'),
+        ('30min', '30MIN'),
+        ('60min', '60MIN'),
+    )
+
     Symbol = models.CharField(max_length=200)
-    Interval = models.CharField(max_length=200)
+    Interval = models.CharField(max_length=5, choices=INTERVAL_CHOICES, default='5min')
+
+
 
 
     def __str__(self):
