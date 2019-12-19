@@ -12,10 +12,13 @@ class TestModels(TestCase):
     
     def test_find_stocks_is_getting_data(self):
 
-        entry = FindStock(Symbol='AAPL', Interval='5min')
-            
-        self.assertEqual(str(entry), entry.Symbol, entry.Interval)
+        #entry = FindStock(Symbol='AAPL', Interval='5min')
 
-        
+        self.assertEqual(self.newProject)
+            
+        #self.assertEqual(str(entry), entry.Symbol)
+        #self.assertEqual(str(entry), entry.Interval)
+
+
 
         

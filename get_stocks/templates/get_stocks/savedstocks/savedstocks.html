@@ -1,6 +1,8 @@
 {% extends 'get_stocks/home.html' %}
 {% block content %}
 
+<div> <img src="/static/temp/bullish.jpg" class="img=fluid" height="50%" width="100%" alt="Bull Logo"> </div>
+
 
 <div class="jumbotron">
    <div class="card border-info mb-3" style="width: 95%;">
@@ -9,7 +11,7 @@
          <h2>Search results for "{{ stock_name }}" </h2>
          <h3>At interval "{{ interval_time }}"
 
-            <div style="font-size: 65%; width= 85%;"> {{ stock_data_html | safe }}</div>
+            <div style="font-size: 65%; width= 85%;" table border="5"> {{ stock_data_html | safe }}</div>
 
          <p class="card-text"> 
          <div class="container">
@@ -30,4 +32,5 @@
 </div>
 
 {% endblock %}
+
 

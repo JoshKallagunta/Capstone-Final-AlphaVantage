@@ -43,17 +43,17 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response, 'get_stocks/searchStocks/searchstocks.html')
 
 
-    # def test_view_search_DISPLAY_STOCK_DATA_POST(self):
+    def test_view_search_DISPLAY_STOCK_DATA_POST(self):
 
-    #     ui_input = self.stock_search
+        ui_input = self.stock_search
 
-    #     response = self.client.post('get_stocks:view_stock', {
-    #         'Symbol':'MSFT',
-    #         'Interval':'5min'
-    #     })
+        response = self.client.post('get_stocks:view_stock', {
+            'Symbol':'MSFT',
+            'Interval':'5min'
+        })
 
-    #     print(response)
-    #     self.assertEquals(response.status_code, 302)
+        print(response)
+        self.assertEquals(response.status_code, 302)
 
 
 
