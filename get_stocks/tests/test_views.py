@@ -16,11 +16,37 @@ class TestViews(TestCase):
         )
 
 
+    def test_invalid_symbol_shows_error_message(self):
+        # arrange - set up the state of the app
+        invalid_stock_data = { 'Symbol': '12345', 'Interval': '5min'}
+
+        # action
+        response = self.client.post(reverse('get_stocks:view_stock'), invalid_stock_data , follow=True)
+        
+        # assert  - did everything happen as expected? 
+        self.assertEquals(200, response.status_code)
+        self.assertIn('invalid ticker symbol', str(response.content))
+
+
+    # def test_invalid_interval_shows_error_message(self):
+    #     # arrange - set up the state of the app
+    #     invalid_stock_data = { 'Symbol': 'goog', 'Interval': 'sidfjdfogjdifog'}
+
+    #     # action
+    #     response = self.client.post(reverse('get_stocks:view_stock'), invalid_stock_data , follow=True)
+        
+    #     # assert  - did everything happen as expected? 
+    #     self.assertEquals(200, response.status_code)
+    #     self.assertIn('sidfjdfogjdifog is not one of the available choices', str(response.content))    
+
+
+
     def test_view_url_exists_at_HOME_PAGE_GET(self):
 
         response = self.client.get(reverse('get_stocks:stock_list'))
 
         self.assertEqual(response.status_code, 200)
+
         self.assertTemplateUsed(response, 'get_stocks/home.html')
 
 
@@ -29,6 +55,7 @@ class TestViews(TestCase):
         response = self.client.get(reverse('get_stocks:view_search_stock'))
 
         self.assertEqual(response.status_code, 200)
+
         self.assertTemplateUsed(response, 'get_stocks/searchStocks/searchstocks.html')
 
 
@@ -47,23 +74,14 @@ class TestViews(TestCase):
 
         ui_input = self.stock_search
 
-        response = self.client.post('get_stocks:view_stock', {
+        response = self.client.post(reverse('get_stocks:view_stock'), {
             'Symbol':'MSFT',
             'Interval':'5min'
-        })
+        }, follow=True)
 
-        print(response)
-        self.assertEquals(response.status_code, 302)
-
+        self.assertEquals(response.status_code, 200)
+        # assert you land on the stock details page 
+        self.assertTemplateUsed('get_stocks/searchStocks/searchstocks.html')
+        self.assertIn('MSFT', str(response.content))
 
         
-
-
-    
-
-
-
-
-
-
-
