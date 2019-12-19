@@ -1,4 +1,5 @@
 import requests
+from django.shortcuts import redirect, render
 import os
 import logging
 import json
@@ -6,6 +7,7 @@ from alpha_vantage.timeseries import TimeSeries
 from alpha_vantage.techindicators import TechIndicators
 import pandas as pd 
 from pprint import pprint
+from get_stocks import views_search
 
 #
 #log = logging.getLogger('__name__')
@@ -32,8 +34,14 @@ def alpha_api_call(Symbol, Interval):
 
     except Exception as e:
         print(e)
+
+
         #log.e('Error getting data from Alpha API', exc_info=e)
 
+
+
+def relative_url_view(request):
+    return redirect('get_stocks/searchStocks/searchstocks.html')
 
 #if __name__ == '__main__':
     #main()

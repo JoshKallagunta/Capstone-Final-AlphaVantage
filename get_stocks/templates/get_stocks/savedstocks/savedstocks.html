@@ -3,13 +3,13 @@
 
 
 <div class="jumbotron">
-   <div class="card border-info mb-3" style="max-width: 75rem;">
+   <div class="card border-info mb-3" style="width: 95%;">
       <div class="card-header">View your stock prices</div>
-      <div class="card-body">
+      <div class="card-body" style="width: 85%;">
          <h2>Search results for "{{ stock_name }}" </h2>
          <h3>At interval "{{ interval_time }}"
 
-            <div>{{ stock_data_html | safe }}</div>
+            <div style="font-size: 65%; width= 85%;"> {{ stock_data_html | safe }}</div>
 
          <p class="card-text"> 
          <div class="container">
