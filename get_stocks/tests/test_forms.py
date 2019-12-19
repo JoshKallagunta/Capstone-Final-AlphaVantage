@@ -6,8 +6,8 @@ class TestForms(SimpleTestCase):
     def test_new_search_form_IS_VALID(self):
 
         form = NewSearch(data={
-            'name' : 'APPL',
-            'interval' : '1min'
+            'Symbol' : 'AAPL',
+            'Interval' : '5min'
         })
 
         self.assertTrue(form.is_valid())

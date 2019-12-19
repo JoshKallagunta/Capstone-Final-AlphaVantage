@@ -3,13 +3,22 @@ from get_stocks.models import Stock, FindStock, ViewStock
 
 class TestModels(TestCase):
 
-    def setUp():
+    def setUp(self):
         self.newProject = FindStock.objects.create(
-            name = 'APPL',
-            interval = '1min'
+            Symbol='AAPL',
+            Interval='5min',
         )
 
     
-    #def test_find_stocks_is_getting_data(self):
+    def test_find_stocks_is_getting_data(self):
+
+        #entry = FindStock(Symbol='AAPL', Interval='5min')
+
+        self.assertEqual(self.newProject)
+            
+        #self.assertEqual(str(entry), entry.Symbol)
+        #self.assertEqual(str(entry), entry.Interval)
+
+
+
         
-        #self.assertEquals(self.newProject)

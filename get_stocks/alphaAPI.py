@@ -9,10 +9,13 @@ import pandas as pd
 from pprint import pprint
 from get_stocks import views_search
 
+class ALPHA_Exception(Exception):
+    pass
+
 
 def alpha_api_call(Symbol, Interval):
 
-    api_key = '0B7Z2RG55NXJOCF3'
+    api_key = os.environ.get('ALPHA_VANTAGE_KEY')
 
     ts = TimeSeries(key=api_key, output_format='pandas')
 
@@ -32,5 +35,12 @@ def alpha_api_call(Symbol, Interval):
     except Exception as e:
         #Catches exceptions and logs it with a generic message + data about the error 
         print(e)
+        raise ALPHA_Exception('Error:')
+    
+    except NameError as ne:
+        #NameError raised when the API key is not correct 
+        print(ne)
+        raise ALPHA_Exception('Invalid API key: ')
+
 
 
