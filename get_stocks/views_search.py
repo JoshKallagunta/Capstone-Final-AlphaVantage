@@ -32,12 +32,13 @@ def display_stock_data_(request):
 
                 try:
                     args = {'stock_name':stock_name, 'interval_time':interval_time, 'stock_data_html':stock_data.to_html() } 
-                    print(args)
                     return render (request, 'get_stocks/savedstocks/savedstocks.html', args)
 
                 except AttributeError:
 
                     form = NewSearch()
+                    messages.add_message(request, messages.ERROR, 'Sorry, invalid ticker symbol, please try again.')
+
                     return render(request, 'get_stocks/searchStocks/searchstocks.html', {'form':form})
 
 
@@ -50,3 +51,4 @@ def display_stock_data_(request):
         return render(request, 'get_stocks/searchStocks/searchstocks.html', {'form': form} )
 
 #AttributeError: 'NoneType' object has no attribute 'to_html'
+

@@ -4,6 +4,13 @@
    <div> <img src="/static/temp/quotes.jpg" class="img=fluid" width="100%" alt="NYSE Logo"> </div>
    <div class="jumbotron">
       <div class="card border-info mb-3" style="max-width: 75rem;">
+         {% if messages %}
+         <ul style="color:red; font-size:1.9em;">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+         </ul>
+         {% endif %}
          <div class="card-header">Search Stocks</div>
          <div class="card-body">
             <h4 class="card-title">Please enter a stock ticker symbol and an interval.</h4>
@@ -20,4 +27,3 @@
    </div>
 </form>
 {% endblock %}
-
