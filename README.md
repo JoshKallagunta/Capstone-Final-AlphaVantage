@@ -3,6 +3,8 @@ This program allows a user to search for a specific Stock Ticker Symbol and Inte
 
 It is a Django app and running on a local host at the moment.
 
+It includes a requirements.txt that has all packages/libraries that the app needs.
+
 It uses the AlphaVantage API, there is an API key needed. You can get a free one at this link:
 https://www.alphavantage.co/support/#api-key
 
