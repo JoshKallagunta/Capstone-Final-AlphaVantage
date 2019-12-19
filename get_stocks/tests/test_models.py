@@ -10,6 +10,12 @@ class TestModels(TestCase):
         )
 
     
-    # def test_find_stocks_is_getting_data(self):
+    def test_find_stocks_is_getting_data(self):
+
+        entry = FindStock(Symbol='AAPL', Interval='5min')
+            
+        self.assertEqual(str(entry), entry.Symbol, entry.Interval)
+
         
-    #     self.assertEquals(self.newProject)
+
+        

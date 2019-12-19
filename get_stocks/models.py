@@ -23,7 +23,7 @@ class FindStock(models.Model):
         ('60min', '60 MIN'),
     )
 
-    Symbol = models.CharField(max_length=200)
+    Symbol = models.CharField(max_length=5)
     Interval = models.CharField(max_length=5, choices=INTERVAL_CHOICES, default='5min')
 
 
