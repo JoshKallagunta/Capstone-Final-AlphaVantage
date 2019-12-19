@@ -9,23 +9,20 @@ class TestUrls(SimpleTestCase):
 
     def test_stock_list_is_resolved(self):
 
-        url = reverse('stock_list')
-        print(resolve(url))
+        url = reverse('get_stocks:stock_list')
+        #print(resolve(url))
         self.assertEquals(resolve(url).func, stock_list)
-        #NoReverseMatch
 
 
     def test_view_search_stock_is_resolved(self):
 
-        url = reverse('view_search_stock')
-        print(resolve(url))
+        url = reverse('get_stocks:view_search_stock')
+        #print(resolve(url))
         self.assertEquals(resolve(url).func, view_search_stock)
-        #NoReverseMatch
 
     def test_view_stock_is_resolved(self):
 
-        url = reverse('view_stock')
-        print(resolve(url))
-        self.assertEquals(resolve(url).func, view_saved_stock)
-        #NoReverseMatch
+        url = reverse('get_stocks:view_stock')
+        #print(resolve(url))
+        self.assertEquals(resolve(url).func, display_stock_data_)
 
