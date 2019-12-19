@@ -1,27 +1,23 @@
 {% extends 'get_stocks/home.html' %}
 {% block content %}
-
 <form action="{% url 'get_stocks:view_stock' %}" method="POST">
-
-<div class="jumbotron">
-      <div> 
-         <img src="static/temp/quotepic.jpg" class="img=fluid" width="100%" alt="NYSE Logo">
-      </div>
-   <div class="card border-info mb-3" style="max-width: 75rem;">
-      <div class="card-header">Search Stocks</div>
-      <div class="card-body">
-         <h4 class="card-title">Please enter a stock ticker symbol and an interval.</h4>
-         <p class="card-text"> 
-            {% csrf_token %}
-         <h5> {{stock_name}} </h5>
-         <table style="width:100%">
-            {{ form.as_p }}
-            <td><button type="submit" class="btn btn-primary">Get Stock Info</button>
-         </table>
-         </p>
+   <div> <img src="/static/temp/quotes.jpg" class="img=fluid" width="100%" alt="NYSE Logo"> </div>
+   <div class="jumbotron">
+      <div class="card border-info mb-3" style="max-width: 75rem;">
+         <div class="card-header">Search Stocks</div>
+         <div class="card-body">
+            <h4 class="card-title">Please enter a stock ticker symbol and an interval.</h4>
+            <p class="card-text"> 
+               {% csrf_token %}
+            <h5> {{stock_name}} </h5>
+            <table style="width:100%">
+               {{ form.as_p }}
+               <td><button type="submit" class="btn btn-primary">Get Stock Info</button>
+            </table>
+            </p>
+         </div>
       </div>
    </div>
-</div>
-
 </form>
 {% endblock %}
+
