@@ -20,7 +20,7 @@
          <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
                <li class="nav-item active">
-                  <a class="nav-link" href="{% url 'get_stocks:view_search_stock' %}">Find Stocks <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" style="font-size:1.5em;" href="{% url 'get_stocks:view_search_stock' %}">Track Stocks <span class="sr-only">(current)</span></a>
                </li>
                </li>
             </ul>
@@ -36,8 +36,8 @@
          <img src="/static/temp/nyse.jpg" class="img=fluid" width="100%" alt="NYSE Logo">
          </div>
          <div class="jumbotron">
-            <h1 class="display-3">Welcome to the Stock Tracker</h1>
-            <p class="lead">This application is used to track interday stock prices in intervals of 5,15,30, and 60 minutes. This will display in a table for easy viewing.</p>
+            <h1 class="display-3" style="font-size: 3em;">Welcome to the Stock Tracker</h1>
+            <p class="lead">This application is used to track interday stock prices in intervals of 5, 15, 30, and 60 minutes. This will display in a table for easy viewing.</p>
             <hr class="my-4">
             <p>It uses the AlphaVantage API to get interday data. Future enhancements will include Simple Moving Average (SMA) and Relative Strength Index (RSI) tracking as well. Possibly the ability to graph the data. </p>
             <p class="lead">
