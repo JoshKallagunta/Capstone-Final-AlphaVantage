@@ -7,10 +7,10 @@ from alpha_vantage.timeseries import TimeSeries
 from alpha_vantage.techindicators import TechIndicators
 import pandas as pd 
 from pprint import pprint
-from get_stocks import views_search
+#from get_stocks import views_search
 
-class ALPHA_Exception(Exception):
-    pass
+#class ALPHA_Exception(Exception):
+    #pass
 
 
 def alpha_api_call(Symbol, Interval):
@@ -35,12 +35,12 @@ def alpha_api_call(Symbol, Interval):
     except Exception as e:
         #Catches exceptions and logs it with a generic message + data about the error 
         print(e)
-        raise ALPHA_Exception('Error:')
+        #raise ALPHA_Exception('Error:')
     
     except NameError as ne:
         #NameError raised when the API key is not correct 
         print(ne)
-        raise ALPHA_Exception('Invalid API key: ')
+        #raise ALPHA_Exception('Invalid API key: ')
 
 
 
