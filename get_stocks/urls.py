@@ -14,5 +14,8 @@ urlpatterns = [
 
     #View results of API call page 
     path('saved/', views_search.display_stock_data_, name='view_stock'),
+
+    #In progress
+    path('view_searches/', views_saved.view_all_saved_stocks, name='view_all_saved_stocks'),
     
 ]
