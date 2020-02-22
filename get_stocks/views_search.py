@@ -37,7 +37,7 @@ def display_stock_data_(request):
             if stock_name is not None:
 
                 try:
-                    args = {'stock_name':stock_name, 'interval_time':interval_time, 'stock_data_html':stock_data.to_html() } 
+                    args = {'stock_name':stock_name, 'interval_time':interval_time, 'stock_data_html':stock_data.to_html(classes='table table-striped') } 
                     return render (request, 'get_stocks/savedstocks/savedstocks.html', args)
 
                 #If the stock_name is not a real ticker symbol, catches that error, creates a new form,
@@ -52,6 +52,9 @@ def display_stock_data_(request):
         #If API connection is unsuccessful, gives the user a message 
         else:
             messages.add_message(request, messages.ERROR, 'Sorry, could not connnect to Alpha API.')
+
+            return render(request, 'get_stocks/searchStocks/searchstocks.html', {'form':form})
+
 
     #If the method is a GET request(more than likely), it will generate a new form on the searchstocks.html page 
     else: 

@@ -3,6 +3,7 @@ from get_stocks.models import Stock, FindStock, ViewStock
 
 class TestModels(TestCase):
 
+    #Testing if the model saves data to the DB 
     def setUp(self):
         self.newProject = FindStock.objects.create(
             Symbol='AAPL',

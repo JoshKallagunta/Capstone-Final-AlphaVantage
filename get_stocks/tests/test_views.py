@@ -7,7 +7,7 @@ from get_stocks.models import FindStock
 
 
 class TestViews(TestCase):
-
+    #Setup data for tests
     def setUp(self):
         self.client = Client()
         self.stock_search = FindStock.objects.create(
