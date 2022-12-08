@@ -1,7 +1,7 @@
 alpha-vantage==2.1.2
 asgiref==3.2.3
 autopep8==1.4.4
-certifi==2019.11.28
+certifi==2022.12.7
 chardet==3.0.4
 Django==3.0
 idna==2.8
